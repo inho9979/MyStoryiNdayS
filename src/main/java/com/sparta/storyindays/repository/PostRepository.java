@@ -9,14 +9,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post> findAllByPostType(PostType postType);
-
-    List<Post> findAllByPostTypeAndIsPinned(PostType postType, boolean isPinned);
-
-    Page<Post> findAllByPostTypeAndIsPinned(PostType postType, boolean isPinned, Pageable pageable);
-
-    Page<Post> findAllByPostTypeAndIsPinnedAndUser(PostType postType, boolean b, User user, Pageable pageable);
-
-    List<Post> findAllByUser(User user);
+public interface PostRepository extends JpaRepository<Post, Long>, PostRepositoryCustom{
+//    List<Post> findAllByPostType(PostType postType);
+//
+//    List<Post> findAllByPostTypeAndIsPinned(PostType postType, boolean isPinned);
+//
+//    Page<Post> findAllByPostTypeAndIsPinned(PostType postType, boolean isPinned, Pageable pageable);
+//
+//    Page<Post> findAllByPostTypeAndIsPinnedAndUser(PostType postType, boolean b, User user, Pageable pageable);
+//
+//   List<Post> findAllByUser(User user);
 }

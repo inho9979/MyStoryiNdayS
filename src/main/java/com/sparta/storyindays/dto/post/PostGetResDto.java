@@ -11,11 +11,11 @@ public class PostGetResDto {
 
     List<PostNotifyResDto> noticePostList;
     List<PostUpdateResDto> pinnedPostList;
-    Page<PostUpdateResDto> postList;
+    List<PostUpdateResDto> postList;
 
-    public PostGetResDto(List<Post> noticePostList, List<Post> pinnedPostList, Page<Post> postList) {
+    public PostGetResDto(List<Post> noticePostList, List<Post> pinnedPostList, List<Post> postList) {
         this.noticePostList = noticePostList.stream().map(PostNotifyResDto::new).toList();
         this.pinnedPostList = pinnedPostList.stream().map(PostUpdateResDto::new).toList();
-        this.postList = postList.map(PostUpdateResDto::new);
+        this.postList = postList.stream().map(PostUpdateResDto::new).toList();
     }
 }

@@ -47,9 +47,6 @@ public class PostService {
 
         Pageable pageable = Utils.getPageable(page, isAsc);
 
-        // repository에서 공지글 찾아오기
-        // repository에서 상단글 찾아오기
-        // repository에서 일반글 찾아오기 (페이지), pageable
         PostGetResDto postGetResDto = new PostGetResDto(postRepository.findAllByPostType(PostType.NOTICE)
                 , postRepository.findAllByPostTypeAndIsPinned(PostType.NORMAL, true)
                 , postRepository.findAllByPostTypeAndIsPinned(PostType.NORMAL, false, pageable));
